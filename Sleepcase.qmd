@@ -1,0 +1,112 @@
+---
+title: "Case-II: Lifestyle and Sleeping Quality"
+format: html
+---
+
+<h4>Part A General Summary</h4>
+
+<h1>Hello World</h1>
+///
+
+```{r}
+#Reading the file 
+sleep<-read.csv("sleep.csv")
+
+
+```
+
+```{r}
+#Types of Jobs at a study 
+unique(sleep$occupation)
+
+#Types of Sleep disorders in the study 
+unique(sleep$sleep_disorder)
+
+
+#Range of sleep quality 
+sort(unique(sleep$sleep_quality))
+
+#Sample size 
+print(sample_size<-length(sleep$gender))
+
+#Mean of sleep time
+print(mean_sleepdur<-mean(sleep$sleep_duration))
+
+
+```
+
+<br><br><br><br><br><br><br><br><br>
+
+***Relation between Occupation and Sleep duration***
+
+```{r, fig.width=10, fig.height=8}
+coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
+
+sleepocdu<-aggregate( sleep_duration ~ occupation, data = sleep, FUN = mean) 
+sleepocdu<-cbind(sleepocdu,coljack)
+sleepocdu <- sleepocdu[order(-sleepocdu$sleep_duration),]
+print(sleepocdu)
+
+par(mar = c(5, 4, 4, 2))  
+
+bpsd <- barplot(
+  sleepocdu$sleep_duration, col = sleepocdu$coljack, main = "Sleep duration based on Profession", axis.lty = 0, ylim = c(0, 10), ylab = "Sleep (Hours)", xlab= "Occupation", names.arg = sleepocdu$occupation, las=2
+)
+
+
+
+```
+
+*Engineer is with the highest duration of sleep on average* 
+<br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+```{r, fig.height=8, fig.width=10}
+
+sleepocqw<-aggregate( sleep_quality ~ occupation, data = sleep, FUN = mean)
+sleepocqw<-cbind(sleepocqw,coljack)
+sleepocqw <- sleepocqw[order(-sleepocqw$sleep_quality),]
+print(sleepocqw)
+par(mar = c(10, 4, 4, 2))
+barplot(sleepocqw$sleep_quality,
+        names.arg = sleepocqw$occupation,
+        col = sleepocqw$coljack,
+        main = "Sleep quality based on Profession",
+        axis.lty = 0,
+        las=2,
+        ylim = c(0,10),
+        ylab = "Sleep quality (1-10)"
+        
+        )
+        
+
+
+```
+
+```{r, fig.height=8, fig.width=10}
+sleepocst<-aggregate(stress_level ~ occupation, data = sleep, FUN = mean )
+sleepocst<-cbind(sleepocst,coljack)
+sleepocst<-sleepocst[order(-sleepocst$stress_level),]
+print(sleepocst)
+
+bpst<-barplot(sleepocst$stress_level, col = sleepocst$coljack,  main = "Occupation and stress level", ylab = "Stress level (1-10)", ylim = c(0,10), )
+
+text(x = bpst, y = sleepocst$stress_level + 0.3, labels = sleepocst$occupation, srt = 90,adj = 0,cex = 1
+)
+```
+
+
+
+***Sleep disorder***
+```{r}
+#| label: Sleep Disorder
+table(sleep$sleep_disorder)
+``` 
+
+Sleep Apnea is most common (excluding no disorder)
+
