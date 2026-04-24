@@ -3,10 +3,10 @@ title: "Case-II: Lifestyle and Sleeping Quality"
 format: html
 ---
 
-<h4>Part A General Summary</h4>
 
-<h1>Hello World</h1>
-///
+
+
+
 
 ```{r}
 #Reading the file 
