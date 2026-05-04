@@ -1,0 +1,15 @@
+---
+title: "try"
+format: html
+---
+
+<h4>Part A General Summary</h4>
+![](Arthur.jpeg)
+
+![Caption for the picture.](2jpeg)
+![Caption for the picture.](3.png)
+![Caption for the picture.](1.heic)
+
+
+install.packages("markdown")
+

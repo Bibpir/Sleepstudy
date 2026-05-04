@@ -5,9 +5,10 @@ format: html
 
 Test of cae folder
 
-
-
-
+```{r}
+#install.packages("ggplot2")
+#library("ggplot2")
+```
 
 ```{r}
 #Reading the file 
@@ -51,9 +52,11 @@ print(sleepocdu)
 par(mar = c(5, 4, 4, 2))  
 
 bpsd <- barplot(
-  sleepocdu$sleep_duration, col = sleepocdu$coljack, main = "Sleep duration based on Profession", axis.lty = 0, ylim = c(0, 10), ylab = "Sleep (Hours)", xlab= "Occupation", names.arg = sleepocdu$occupation, las=2
+  sleepocdu$sleep_duration, col = sleepocdu$coljack, main = "Sleep duration based on Profession", axis.lty = 0, ylim = c(0, 10), ylab = "Sleep (Hours)", names.arg = sleepocdu$occupation, las=2
 )
 
+  
+  
 
 
 ```
@@ -111,3 +114,123 @@ table(sleep$sleep_disorder)
 
 Sleep Apnea is most common (excluding no disorder)
 
+
+
+```{r}
+sleep_male<-sleep[sleep$gender %in% c("Male"),]
+#Male
+table(sleep_male$sleep_disorder)
+
+sleep_female<-sleep[sleep$gender %in% c("Female"),]
+#Female
+table(sleep_female$sleep_disorder)
+
+```
+Most common in Male is Insomnia
+Most common in Female is Apnea
+
+
+
+```{r}
+
+sleepocst_Male<-aggregate(stress_level ~ occupation, data = sleep_male, FUN = mean )
+sleepocst_Male<-sleepocst_Male[order(-sleepocst_Male$stress_level),]
+print(sleepocst_Male)
+
+
+```
+Male Sales Representatives has highest stress
+
+
+
+```{r}
+sleepocst_Female<-aggregate(stress_level ~ occupation, data = sleep_female, FUN = mean )
+sleepocst_Female<-sleepocst_Female[order(-sleepocst_Female$stress_level),]
+print(sleepocst_Female)
+
+
+
+```
+Female Scientist has highest stress
+
+
+```{r}
+sleepocqw_male<-aggregate( sleep_quality ~ occupation, data = sleep_male, FUN = mean)
+sleepocqw_male <- sleepocqw_male[order(-sleepocqw_male$sleep_quality),]
+print(sleepocqw_male)
+
+
+```
+
+Lowsest Male sleep quality is for Sales Representatives 
+
+```{r}
+sleepocqw_female<-aggregate( sleep_quality ~ occupation, data = sleep_female, FUN = mean)
+sleepocqw_female <- sleepocqw_female[order(-sleepocqw_female$sleep_quality),]
+print(sleepocqw_female)
+
+
+
+```
+Lowest Female sleep quality is for Scientist
+
+```{r}
+print(cor(sleep$sleep_quality,sleep$stress_level))
+
+```
+There is a negative correlation between stress level and sleep quality meaning the more stress a person have the worse is there sleep quality. Also basing that there is a similar correlation in separate female and male group i think that there is enough evidence to say there can be a strong correlation. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+
+ sleep_male_insomnia<-sleep_male[sleep_male$sleep_disorder %in% c("Insomnia"),]
+print(length(sleep_male_insomnia$gender)/length(sleep_male$gender)*100)
+
+```
+
+Wrong 21.69 percent of males strugle from Insomnoa 
+
+
+```{r}
+print(mean(sleep_male_insomnia$daily_steps))
+```
+
+Wring the average daily steps by males with insomnia is 5812
+
+
+
+
+
+
+
+
+
+
+```{r}
+sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
+summary(sleep_insomnia$sleep_duration)
+boxplot(sleep_insomnia$sleep_duration, horizontal = TRUE, main = "Duration of sleep with Insomnia")
+
+
+
+
+sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
+print(summary(sleep_apnea$sleep_duration))
+
+boxplot(sleep_apnea$sleep_duration, horizontal = TRUE,main = "Duration of sleep with Sleep Apnea")
+
+```
