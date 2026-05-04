@@ -11,7 +11,12 @@ author: Egor Barsegov,
 
 ```{r}
 old<-par(no.readonly = TRUE)
+```{r, fig.width=10, fig.height=8}
+coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
+
 ```
+
+
 
 ```{r}
 #Reading the file 
@@ -47,6 +52,22 @@ unique(sleep$occupation)
 length(unique(sleep$occupation))
 
 
+
+  
+  
+  sleepocdu<-aggregate( sleep_duration ~ occupation, data = sleep, FUN = mean) 
+  sleepocdu<-cbind(sleepocdu,coljack)
+  sleepocdu <- sleepocdu[order(-sleepocdu$sleep_duration),]
+  print(sleepocdu)
+  
+  par(mai = c(0.1, 0.4, 0.1, 0.2),mar = c(11, 4, 2, 2))  
+  
+  bpsd <- barplot(
+    sleepocdu$sleep_duration, col = sleepocdu$coljack, main = "Sleep duration based on Profession", axis.lty = 0, ylim = c(0, 10), ylab = "Sleep (Hours)", names.arg = sleepocdu$occupation, las=2
+  )
+  
+
+
 ```
 
 
@@ -61,10 +82,6 @@ length(unique(sleep$occupation))
 ### Relation between Occupation and Sleep Quality
 
 
-```{r, fig.width=10, fig.height=8}
-coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
-
-```
 
 
 
@@ -90,7 +107,7 @@ barplot(sleepocqw$sleep_quality,
 
 
 ```
-### Relation between Occupation and Sleep level
+### 2a Relation between Occupation and Sleep level
 ```{r, fig.height=8, fig.width=10}
 sleepocst<-aggregate(stress_level ~ occupation, data = sleep, FUN = mean )
 sleepocst<-cbind(sleepocst,coljack)
@@ -105,7 +122,7 @@ text(x = bpst, y = sleepocst$stress_level + 0.3, labels = sleepocst$occupation, 
 
 
 
-### Sleep disorder
+### 2b Sleep disorder
 
 ```{r}
 
@@ -127,7 +144,19 @@ Most common in Female is Apnea
 Most common in Male is Insomnia
 
 
+### 2c Combination of Occupation gender Quality 
 
+```{r}
+occ_gen_qual <- aggregate(sleep_quality ~ occupation + gender, data = sleep, FUN = mean)
+counts <- aggregate(sleep_quality ~ occupation + gender, data = sleep, FUN = length)
+names(counts)[3] <- "n"
+occ_gen_qual <- merge(occ_gen_qual, counts, by = c("occupation", "gender"))
+occ_gen_qual <- occ_gen_qual[order(-occ_gen_qual$sleep_quality), ]
+occ_gen_qual
+
+
+
+```
 
 ```{r}
   sleep_male<-sleep[sleep$gender %in% c("Male"),]
@@ -135,24 +164,10 @@ Most common in Male is Insomnia
 ```
 
 
-```{r}
-sleepocqw_male<-aggregate( sleep_quality ~ occupation, data = sleep_male, FUN = mean)
-sleepocqw_male <- sleepocqw_male[order(-sleepocqw_male$sleep_quality),]
-print(sleepocqw_male)
-
-
-```
 
 Lowsest Male sleep quality is for Sales Representatives 
 
-```{r}
-sleepocqw_female<-aggregate( sleep_quality ~ occupation, data = sleep_female, FUN = mean)
-sleepocqw_female <- sleepocqw_female[order(-sleepocqw_female$sleep_quality),]
-print(sleepocqw_female)
 
-
-
-```
 Lowest Female sleep quality is for Scientist
 
 ```{r}
