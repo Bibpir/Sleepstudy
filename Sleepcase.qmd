@@ -1,71 +1,70 @@
 ---
 title: "Case-II: Lifestyle and Sleeping Quality"
 format: html
+author: Egor Barsegov,
 ---
 
-Test of cae folder
+# Case study sleep (task 2)
+
+
+## Part 1
 
 ```{r}
-#install.packages("ggplot2")
-#library("ggplot2")
+old<-par(no.readonly = TRUE)
 ```
 
 ```{r}
 #Reading the file 
 sleep<-read.csv("sleep.csv")
-
-
+head(sleep)
 ```
+
+
 
 ```{r}
-#Types of Jobs at a study 
+#types of data and sample size 
+str(sleep)
+
+
+#changing tyoes of data to Factor for easier summary 
+sleep$occupation <-factor(sleep$occupation)
+sleep$sleep_disorder <- factor(sleep$sleep_disorder)
+
+
+#summary for main data
+summary(sleep)
+
+
+
+#distribution of age, sleep duration, stress level, daily steps
+
+sapply(sleep[,c("age","sleep_duration","stress_level","daily_steps")], FUN=sd)
+
+
+
+#Types of Jobs at a study and length 
 unique(sleep$occupation)
-
-#Types of Sleep disorders in the study 
-unique(sleep$sleep_disorder)
-
-
-#Range of sleep quality 
-sort(unique(sleep$sleep_quality))
-
-#Sample size 
-print(sample_size<-length(sleep$gender))
-
-#Mean of sleep time
-print(mean_sleepdur<-mean(sleep$sleep_duration))
+length(unique(sleep$occupation))
 
 
 ```
 
-<br><br><br><br><br><br><br><br><br>
 
-***Relation between Occupation and Sleep duration***
+
+
+
+
+## Part 2
+
+
+
+### Relation between Occupation and Sleep Quality
+
 
 ```{r, fig.width=10, fig.height=8}
 coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
 
-sleepocdu<-aggregate( sleep_duration ~ occupation, data = sleep, FUN = mean) 
-sleepocdu<-cbind(sleepocdu,coljack)
-sleepocdu <- sleepocdu[order(-sleepocdu$sleep_duration),]
-print(sleepocdu)
-
-par(mar = c(5, 4, 4, 2))  
-
-bpsd <- barplot(
-  sleepocdu$sleep_duration, col = sleepocdu$coljack, main = "Sleep duration based on Profession", axis.lty = 0, ylim = c(0, 10), ylab = "Sleep (Hours)", names.arg = sleepocdu$occupation, las=2
-)
-
-  
-  
-
-
 ```
-
-*Engineer is with the highest duration of sleep on average* 
-<br><br><br><br><br><br><br><br><br>
-
-
-
 
 
 
@@ -75,7 +74,7 @@ bpsd <- barplot(
 sleepocqw<-aggregate( sleep_quality ~ occupation, data = sleep, FUN = mean)
 sleepocqw<-cbind(sleepocqw,coljack)
 sleepocqw <- sleepocqw[order(-sleepocqw$sleep_quality),]
-print(sleepocqw)
+print(sleepocqw[,c("occupation","sleep_quality")])
 par(mar = c(10, 4, 4, 2))
 barplot(sleepocqw$sleep_quality,
         names.arg = sleepocqw$occupation,
@@ -91,12 +90,12 @@ barplot(sleepocqw$sleep_quality,
 
 
 ```
-
+### Relation between Occupation and Sleep level
 ```{r, fig.height=8, fig.width=10}
 sleepocst<-aggregate(stress_level ~ occupation, data = sleep, FUN = mean )
 sleepocst<-cbind(sleepocst,coljack)
 sleepocst<-sleepocst[order(-sleepocst$stress_level),]
-print(sleepocst)
+print(sleepocst[,c("occupation","stress_level")])
 
 bpst<-barplot(sleepocst$stress_level, col = sleepocst$coljack,  main = "Occupation and stress level", ylab = "Stress level (1-10)", ylim = c(0,10), )
 
@@ -106,30 +105,55 @@ text(x = bpst, y = sleepocst$stress_level + 0.3, labels = sleepocst$occupation, 
 
 
 
-***Sleep disorder***
+### Sleep disorder
+
 ```{r}
-#| label: Sleep Disorder
+
 table(sleep$sleep_disorder)
+gender_w_dis<-table(sleep$gender, sleep$sleep_disorder)
+
+
+par(mfrow=c(1,2),mar= c(2,2,2,4))
+pie(gender_w_dis["Male", ],main = "Male")
+
+pie(gender_w_dis["Female", ],main = "Female")
+
+par(old)
 ``` 
 
-Sleep Apnea is most common (excluding no disorder)
+Sleep Apnea is most common overall (excluding no disorder)
+
+Most common in Female is Apnea
+Most common in Male is Insomnia
+
 
 
 
 ```{r}
-sleep_male<-sleep[sleep$gender %in% c("Male"),]
-#Male
-table(sleep_male$sleep_disorder)
+  sleep_male<-sleep[sleep$gender %in% c("Male"),]
+    sleep_female<-sleep[sleep$gender %in% c("Female"),]
+```
 
-sleep_female<-sleep[sleep$gender %in% c("Female"),]
-#Female
-table(sleep_female$sleep_disorder)
+
+```{r}
+sleepocqw_male<-aggregate( sleep_quality ~ occupation, data = sleep_male, FUN = mean)
+sleepocqw_male <- sleepocqw_male[order(-sleepocqw_male$sleep_quality),]
+print(sleepocqw_male)
+
 
 ```
-Most common in Male is Insomnia
-Most common in Female is Apnea
+
+Lowsest Male sleep quality is for Sales Representatives 
+
+```{r}
+sleepocqw_female<-aggregate( sleep_quality ~ occupation, data = sleep_female, FUN = mean)
+sleepocqw_female <- sleepocqw_female[order(-sleepocqw_female$sleep_quality),]
+print(sleepocqw_female)
 
 
+
+```
+Lowest Female sleep quality is for Scientist
 
 ```{r}
 
@@ -155,26 +179,6 @@ Female Scientist has highest stress
 
 
 ```{r}
-sleepocqw_male<-aggregate( sleep_quality ~ occupation, data = sleep_male, FUN = mean)
-sleepocqw_male <- sleepocqw_male[order(-sleepocqw_male$sleep_quality),]
-print(sleepocqw_male)
-
-
-```
-
-Lowsest Male sleep quality is for Sales Representatives 
-
-```{r}
-sleepocqw_female<-aggregate( sleep_quality ~ occupation, data = sleep_female, FUN = mean)
-sleepocqw_female <- sleepocqw_female[order(-sleepocqw_female$sleep_quality),]
-print(sleepocqw_female)
-
-
-
-```
-Lowest Female sleep quality is for Scientist
-
-```{r}
 print(cor(sleep$sleep_quality,sleep$stress_level))
 
 ```
@@ -185,15 +189,7 @@ There is a negative correlation between stress level and sleep quality meaning t
 
 
 
-
-
-
-
-
-
-
-
-
+## Part 3
 
 ```{r}
 
@@ -210,14 +206,6 @@ print(mean(sleep_male_insomnia$daily_steps))
 ```
 
 Wring the average daily steps by males with insomnia is 5812
-
-
-
-
-
-
-
-
 
 
 ```{r}
