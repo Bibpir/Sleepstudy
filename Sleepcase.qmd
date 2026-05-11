@@ -1,7 +1,14 @@
 ---
 title: "Case-II: Lifestyle and Sleeping Quality"
-format: html
+format:
+  html:
+    toc: true
+    toc-location: left   # or right
+    toc-depth: 3
+    number-sections: true
+    smooth-scroll: true
 author: Egor Barsegov,
+
 ---
 
 # Case study sleep (task 2)
@@ -11,7 +18,7 @@ author: Egor Barsegov,
 
 ```{r}
 old<-par(no.readonly = TRUE)
-```{r, fig.width=10, fig.height=8}
+
 coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
 
 ```
@@ -78,13 +85,9 @@ length(unique(sleep$occupation))
 ## Part 2
 
 
+### 2a Relation between Occupation and Stress level, Sleep quality
 
-### Relation between Occupation and Sleep Quality
-
-
-
-
-
+#### Sleep Quality and Occupation
 
 ```{r, fig.height=8, fig.width=10}
 
@@ -96,7 +99,7 @@ par(mar = c(10, 4, 4, 2))
 barplot(sleepocqw$sleep_quality,
         names.arg = sleepocqw$occupation,
         col = sleepocqw$coljack,
-        main = "Sleep quality based on Profession",
+        main = "Sleep quality based on Occupation",
         axis.lty = 0,
         las=2,
         ylim = c(0,10),
@@ -107,7 +110,7 @@ barplot(sleepocqw$sleep_quality,
 
 
 ```
-### 2a Relation between Occupation and Sleep level
+#### Stress Level and Occupation
 ```{r, fig.height=8, fig.width=10}
 sleepocst<-aggregate(stress_level ~ occupation, data = sleep, FUN = mean )
 sleepocst<-cbind(sleepocst,coljack)
@@ -222,11 +225,40 @@ print(mean(sleep_male_insomnia$daily_steps))
 
 Wring the average daily steps by males with insomnia is 5812
 
+## Part 4
+
+### a) 
+
+#### 1.
+
+```{r}
+sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
+summary(sleep_insomnia$age)
+par(mfrow=c(1,2),mar= c(5,1,5,1))
+
+boxplot(sleep_insomnia$age, horizontal = TRUE, main = "Age of people with Insomnia", col= "lightblue")
+
+
+
+
+sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
+print(summary(sleep_apnea$age))
+
+boxplot(sleep_apnea$age, horizontal = TRUE,main = "Age of people with Sleep Apnea", col= "lightgreen")
+
+```
+
+### a) 
+
+#### 2.
+
 
 ```{r}
 sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
 summary(sleep_insomnia$sleep_duration)
-boxplot(sleep_insomnia$sleep_duration, horizontal = TRUE, main = "Duration of sleep with Insomnia")
+par(mfrow=c(1,2),mar= c(5,1,5,1))
+
+boxplot(sleep_insomnia$sleep_duration, horizontal = TRUE, main = "Duration of sleep with Insomnia",col="lightblue")
 
 
 
@@ -234,6 +266,6 @@ boxplot(sleep_insomnia$sleep_duration, horizontal = TRUE, main = "Duration of sl
 sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
 print(summary(sleep_apnea$sleep_duration))
 
-boxplot(sleep_apnea$sleep_duration, horizontal = TRUE,main = "Duration of sleep with Sleep Apnea")
+boxplot(sleep_apnea$sleep_duration, horizontal = TRUE,main = "Duration of sleep with Sleep Apnea", col= "lightgreen")
 
 ```

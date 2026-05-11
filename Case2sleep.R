@@ -38,6 +38,20 @@ print(sleepocdu)
 
 
 
+
+
+not needed
+```{r, fig.width=10, fig.height=8}
+coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
+
+```
+
+*Engineer is with the highest duration of sleep on average* 
+  <br><br><br><br><br><br><br><br><br>
+  
+
+
+
 c("#660033","#990000", "#ff6666", "#cc3300",  "#0000ff", "#336699","#006600" ,"#00994d", "#006666" ,  "#996633" , "#cc33ff")
 
 
@@ -80,5 +94,72 @@ text(
 ?cor
  
 
+  
+  
+  
+  ```{r}
+  
+  
+  sleepocdu<-aggregate( sleep_duration ~ occupation, data = sleep, FUN = mean) 
+  sleepocdu<-cbind(sleepocdu,coljack)
+  sleepocdu <- sleepocdu[order(-sleepocdu$sleep_duration),]
+  print(sleepocdu)
+  
+  par(mar = c(5, 4, 4, 2))  
+  
+  bpsd <- barplot(
+    sleepocdu$sleep_duration, col = sleepocdu$coljack, main = "Sleep duration based on Profession", axis.lty = 0, ylim = c(0, 10), ylab = "Sleep (Hours)", names.arg = sleepocdu$occupation, las=2
+  )
+  
+  ``` 
+  
+  
+  
+  ```{r}
+
+  #Male
+  table(sleep_male$sleep_disorder)
+  
+  ```
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  ```{r}
+  sleepocqw_male<-aggregate( sleep_quality ~ occupation, data = sleep_male, FUN = mean)
+  sleepocqw_male <- sleepocqw_male[order(-sleepocqw_male$sleep_quality),]
+  print(sleepocqw_male)
+  
+  
+  ```
+  
+  
+  ```{r}
+  sleepocqw_female<-aggregate( sleep_quality ~ occupation, data = sleep_female, FUN = mean)
+  sleepocqw_female <- sleepocqw_female[order(-sleepocqw_female$sleep_quality),]
+  print(sleepocqw_female)
+  
+  
+  
+  ```
+  
+  
+  
+  ```{r}
+  
+
+  #Female
+  table(sleep_female$sleep_disorder)
+  
+  ```
+  
 
 

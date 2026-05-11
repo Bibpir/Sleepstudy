@@ -70,14 +70,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="Sleepcase_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Sleepcase_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Sleepcase_files/libs/bootstrap/bootstrap-81267100e462c21b3d6c0d5bf76a3417.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>html{ scroll-behavior: smooth; }</style>
 
 
 </head>
 
-<body class="fullcontent quarto-light">
+<body class="quarto-light">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#case-study-sleep-task-2" id="toc-case-study-sleep-task-2" class="nav-link active" data-scroll-target="#case-study-sleep-task-2"><span class="header-section-number">1</span> Case study sleep (task 2)</a>
+  <ul class="collapse">
+  <li><a href="#part-1" id="toc-part-1" class="nav-link" data-scroll-target="#part-1"><span class="header-section-number">1.1</span> Part 1</a></li>
+  <li><a href="#part-2" id="toc-part-2" class="nav-link" data-scroll-target="#part-2"><span class="header-section-number">1.2</span> Part 2</a>
+  <ul class="collapse">
+  <li><a href="#a-relation-between-occupation-and-stress-level-sleep-quality" id="toc-a-relation-between-occupation-and-stress-level-sleep-quality" class="nav-link" data-scroll-target="#a-relation-between-occupation-and-stress-level-sleep-quality"><span class="header-section-number">1.2.1</span> 2a Relation between Occupation and Stress level, Sleep quality</a></li>
+  <li><a href="#b-sleep-disorder" id="toc-b-sleep-disorder" class="nav-link" data-scroll-target="#b-sleep-disorder"><span class="header-section-number">1.2.2</span> 2b Sleep disorder</a></li>
+  <li><a href="#c-combination-of-occupation-gender-quality" id="toc-c-combination-of-occupation-gender-quality" class="nav-link" data-scroll-target="#c-combination-of-occupation-gender-quality"><span class="header-section-number">1.2.3</span> 2c Combination of Occupation gender Quality</a></li>
+  </ul></li>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3"><span class="header-section-number">1.3</span> Part 3</a></li>
+  <li><a href="#part-4" id="toc-part-4" class="nav-link" data-scroll-target="#part-4"><span class="header-section-number">1.4</span> Part 4</a>
+  <ul class="collapse">
+  <li><a href="#a" id="toc-a" class="nav-link" data-scroll-target="#a"><span class="header-section-number">1.4.1</span> a)</a></li>
+  <li><a href="#a-1" id="toc-a-1" class="nav-link" data-scroll-target="#a-1"><span class="header-section-number">1.4.2</span> a)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -105,20 +131,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="case-study-sleep-task-2" class="level1">
-<h1>Case study sleep (task 2)</h1>
-<section id="part-1" class="level2">
-<h2 class="anchored" data-anchor-id="part-1">Part 1</h2>
+<section id="case-study-sleep-task-2" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Case study sleep (task 2)</h1>
+<section id="part-1" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="part-1"><span class="header-section-number">1.1</span> Part 1</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>old<span class="ot">&lt;-</span><span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>old<span class="ot">&lt;-</span><span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>coljack<span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">"#33ccff"</span>,<span class="st">"#33ffbb"</span>,<span class="st">"#33ff33"</span>,<span class="st">"#99ff33"</span>,<span class="st">"#ff9933"</span>,<span class="st">"#ff3333"</span>,<span class="st">"#ff3399"</span>,<span class="st">"#ff33ff"</span>,<span class="st">"#7733ff"</span>,<span class="st">"#3333ff"</span>,<span class="st">"#ffff1a"</span>), <span class="at">nrow=</span><span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>coljack<span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">"#33ccff"</span>,<span class="st">"#33ffbb"</span>,<span class="st">"#33ff33"</span>,<span class="st">"#99ff33"</span>,<span class="st">"#ff9933"</span>,<span class="st">"#ff3333"</span>,<span class="st">"#ff3399"</span>,<span class="st">"#ff33ff"</span>,<span class="st">"#7733ff"</span>,<span class="st">"#3333ff"</span>,<span class="st">"#ffff1a"</span>), <span class="at">nrow=</span><span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the file </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sleep<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"sleep.csv"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the file </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sleep<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"sleep.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  gender age           occupation sleep_duration sleep_quality stress_level
 1   Male  27    Software Engineer            6.1             6            6
@@ -137,8 +162,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#types of data and sample size </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#types of data and sample size </span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   374 obs. of  8 variables:
  $ gender        : chr  "Male" "Male" "Male" "Male" ...
@@ -150,13 +175,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  $ daily_steps   : int  4200 10000 10000 3000 3000 3000 3500 8000 8000 8000 ...
  $ sleep_disorder: chr  "None" "None" "None" "Sleep Apnea" ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#changing tyoes of data to Factor for easier summary </span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>sleep<span class="sc">$</span>occupation <span class="ot">&lt;-</span><span class="fu">factor</span>(sleep<span class="sc">$</span>occupation)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>sleep<span class="sc">$</span>sleep_disorder <span class="ot">&lt;-</span> <span class="fu">factor</span>(sleep<span class="sc">$</span>sleep_disorder)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#summary for main data</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#changing tyoes of data to Factor for easier summary </span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>sleep<span class="sc">$</span>occupation <span class="ot">&lt;-</span><span class="fu">factor</span>(sleep<span class="sc">$</span>occupation)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sleep<span class="sc">$</span>sleep_disorder <span class="ot">&lt;-</span> <span class="fu">factor</span>(sleep<span class="sc">$</span>sleep_disorder)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co">#summary for main data</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    gender               age             occupation sleep_duration 
  Length:374         Min.   :27.00   Nurse     :73   Min.   :5.800  
@@ -175,15 +200,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  Max.   :9.000   Max.   :8.000   Max.   :10000                     
                                                                    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#distribution of age, sleep duration, stress level, daily steps</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(sleep[,<span class="fu">c</span>(<span class="st">"age"</span>,<span class="st">"sleep_duration"</span>,<span class="st">"stress_level"</span>,<span class="st">"daily_steps"</span>)], <span class="at">FUN=</span>sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#distribution of age, sleep duration, stress level, daily steps</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(sleep[,<span class="fu">c</span>(<span class="st">"age"</span>,<span class="st">"sleep_duration"</span>,<span class="st">"stress_level"</span>,<span class="st">"daily_steps"</span>)], <span class="at">FUN=</span>sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>           age sleep_duration   stress_level    daily_steps 
      8.6731335      0.7956567      1.7745264   1617.9156791 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Types of Jobs at a study and length </span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(sleep<span class="sc">$</span>occupation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Types of Jobs at a study and length </span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(sleep<span class="sc">$</span>occupation)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] Software Engineer    Doctor               Sales Representative
  [4] Teacher              Nurse                Engineer            
@@ -191,14 +216,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 [10] Salesperson          Manager             
 11 Levels: Accountant Doctor Engineer Lawyer Manager ... Teacher</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(sleep<span class="sc">$</span>occupation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(sleep<span class="sc">$</span>occupation))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 11</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>  sleepocdu<span class="ot">&lt;-</span><span class="fu">aggregate</span>( sleep_duration <span class="sc">~</span> occupation, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean) </span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  sleepocdu<span class="ot">&lt;-</span><span class="fu">cbind</span>(sleepocdu,coljack)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  sleepocdu <span class="ot">&lt;-</span> sleepocdu[<span class="fu">order</span>(<span class="sc">-</span>sleepocdu<span class="sc">$</span>sleep_duration),]</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(sleepocdu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>  sleepocdu<span class="ot">&lt;-</span><span class="fu">aggregate</span>( sleep_duration <span class="sc">~</span> occupation, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean) </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  sleepocdu<span class="ot">&lt;-</span><span class="fu">cbind</span>(sleepocdu,coljack)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  sleepocdu <span class="ot">&lt;-</span> sleepocdu[<span class="fu">order</span>(<span class="sc">-</span>sleepocdu<span class="sc">$</span>sleep_duration),]</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(sleepocdu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             occupation sleep_duration coljack
 3              Engineer       7.987302 #33ff33
@@ -213,29 +238,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9             Scientist       6.000000 #7733ff
 7  Sales Representative       5.900000 #ff3399</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mai =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>),<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>))  </span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  bpsd <span class="ot">&lt;-</span> <span class="fu">barplot</span>(</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    sleepocdu<span class="sc">$</span>sleep_duration, <span class="at">col =</span> sleepocdu<span class="sc">$</span>coljack, <span class="at">main =</span> <span class="st">"Sleep duration based on Profession"</span>, <span class="at">axis.lty =</span> <span class="dv">0</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">ylab =</span> <span class="st">"Sleep (Hours)"</span>, <span class="at">names.arg =</span> sleepocdu<span class="sc">$</span>occupation, <span class="at">las=</span><span class="dv">2</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>  <span class="fu">par</span>(<span class="at">mai =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>),<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>))  </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  bpsd <span class="ot">&lt;-</span> <span class="fu">barplot</span>(</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    sleepocdu<span class="sc">$</span>sleep_duration, <span class="at">col =</span> sleepocdu<span class="sc">$</span>coljack, <span class="at">main =</span> <span class="st">"Sleep duration based on Profession"</span>, <span class="at">axis.lty =</span> <span class="dv">0</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>), <span class="at">ylab =</span> <span class="st">"Sleep (Hours)"</span>, <span class="at">names.arg =</span> sleepocdu<span class="sc">$</span>occupation, <span class="at">las=</span><span class="dv">2</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sleepcase_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Sleepcase_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="part-2" class="level2">
-<h2 class="anchored" data-anchor-id="part-2">Part 2</h2>
-<section id="relation-between-occupation-and-sleep-quality" class="level3">
-<h3 class="anchored" data-anchor-id="relation-between-occupation-and-sleep-quality">Relation between Occupation and Sleep Quality</h3>
+<section id="part-2" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="part-2"><span class="header-section-number">1.2</span> Part 2</h2>
+<section id="a-relation-between-occupation-and-stress-level-sleep-quality" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="a-relation-between-occupation-and-stress-level-sleep-quality"><span class="header-section-number">1.2.1</span> 2a Relation between Occupation and Stress level, Sleep quality</h3>
+<section id="sleep-quality-and-occupation" class="level4" data-number="1.2.1.1">
+<h4 data-number="1.2.1.1" class="anchored" data-anchor-id="sleep-quality-and-occupation"><span class="header-section-number">1.2.1.1</span> Sleep Quality and Occupation</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sleepocqw<span class="ot">&lt;-</span><span class="fu">aggregate</span>( sleep_quality <span class="sc">~</span> occupation, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>sleepocqw<span class="ot">&lt;-</span><span class="fu">cbind</span>(sleepocqw,coljack)</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>sleepocqw <span class="ot">&lt;-</span> sleepocqw[<span class="fu">order</span>(<span class="sc">-</span>sleepocqw<span class="sc">$</span>sleep_quality),]</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocqw[,<span class="fu">c</span>(<span class="st">"occupation"</span>,<span class="st">"sleep_quality"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sleepocqw<span class="ot">&lt;-</span><span class="fu">aggregate</span>( sleep_quality <span class="sc">~</span> occupation, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sleepocqw<span class="ot">&lt;-</span><span class="fu">cbind</span>(sleepocqw,coljack)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>sleepocqw <span class="ot">&lt;-</span> sleepocqw[<span class="fu">order</span>(<span class="sc">-</span>sleepocqw<span class="sc">$</span>sleep_quality),]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocqw[,<span class="fu">c</span>(<span class="st">"occupation"</span>,<span class="st">"sleep_quality"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             occupation sleep_quality
 3              Engineer      8.412698
@@ -250,33 +277,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 9             Scientist      5.000000
 7  Sales Representative      4.000000</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>))</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(sleepocqw<span class="sc">$</span>sleep_quality,</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> sleepocqw<span class="sc">$</span>occupation,</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> sleepocqw<span class="sc">$</span>coljack,</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Sleep quality based on Profession"</span>,</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.lty =</span> <span class="dv">0</span>,</span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">las=</span><span class="dv">2</span>,</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>),</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Sleep quality (1-10)"</span></span>
-<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>        </span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(sleepocqw<span class="sc">$</span>sleep_quality,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">names.arg =</span> sleepocqw<span class="sc">$</span>occupation,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> sleepocqw<span class="sc">$</span>coljack,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Sleep quality based on Occupation"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.lty =</span> <span class="dv">0</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">las=</span><span class="dv">2</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>),</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Sleep quality (1-10)"</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sleepcase_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="Sleepcase_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="a-relation-between-occupation-and-sleep-level" class="level3">
-<h3 class="anchored" data-anchor-id="a-relation-between-occupation-and-sleep-level">2a Relation between Occupation and Sleep level</h3>
+<section id="stress-level-and-occupation" class="level4" data-number="1.2.1.2">
+<h4 data-number="1.2.1.2" class="anchored" data-anchor-id="stress-level-and-occupation"><span class="header-section-number">1.2.1.2</span> Stress Level and Occupation</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sleepocst<span class="ot">&lt;-</span><span class="fu">aggregate</span>(stress_level <span class="sc">~</span> occupation, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean )</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sleepocst<span class="ot">&lt;-</span><span class="fu">cbind</span>(sleepocst,coljack)</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>sleepocst<span class="ot">&lt;-</span>sleepocst[<span class="fu">order</span>(<span class="sc">-</span>sleepocst<span class="sc">$</span>stress_level),]</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocst[,<span class="fu">c</span>(<span class="st">"occupation"</span>,<span class="st">"stress_level"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sleepocst<span class="ot">&lt;-</span><span class="fu">aggregate</span>(stress_level <span class="sc">~</span> occupation, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean )</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sleepocst<span class="ot">&lt;-</span><span class="fu">cbind</span>(sleepocst,coljack)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>sleepocst<span class="ot">&lt;-</span>sleepocst[<span class="fu">order</span>(<span class="sc">-</span>sleepocst<span class="sc">$</span>stress_level),]</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocst[,<span class="fu">c</span>(<span class="st">"occupation"</span>,<span class="st">"stress_level"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             occupation stress_level
 7  Sales Representative     8.000000
@@ -291,56 +318,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 11              Teacher     4.525000
 3              Engineer     3.888889</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bpst<span class="ot">&lt;-</span><span class="fu">barplot</span>(sleepocst<span class="sc">$</span>stress_level, <span class="at">col =</span> sleepocst<span class="sc">$</span>coljack,  <span class="at">main =</span> <span class="st">"Occupation and stress level"</span>, <span class="at">ylab =</span> <span class="st">"Stress level (1-10)"</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), )</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x =</span> bpst, <span class="at">y =</span> sleepocst<span class="sc">$</span>stress_level <span class="sc">+</span> <span class="fl">0.3</span>, <span class="at">labels =</span> sleepocst<span class="sc">$</span>occupation, <span class="at">srt =</span> <span class="dv">90</span>,<span class="at">adj =</span> <span class="dv">0</span>,<span class="at">cex =</span> <span class="dv">1</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>bpst<span class="ot">&lt;-</span><span class="fu">barplot</span>(sleepocst<span class="sc">$</span>stress_level, <span class="at">col =</span> sleepocst<span class="sc">$</span>coljack,  <span class="at">main =</span> <span class="st">"Occupation and stress level"</span>, <span class="at">ylab =</span> <span class="st">"Stress level (1-10)"</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">10</span>), )</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(<span class="at">x =</span> bpst, <span class="at">y =</span> sleepocst<span class="sc">$</span>stress_level <span class="sc">+</span> <span class="fl">0.3</span>, <span class="at">labels =</span> sleepocst<span class="sc">$</span>occupation, <span class="at">srt =</span> <span class="dv">90</span>,<span class="at">adj =</span> <span class="dv">0</span>,<span class="at">cex =</span> <span class="dv">1</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sleepcase_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="Sleepcase_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="b-sleep-disorder" class="level3">
-<h3 class="anchored" data-anchor-id="b-sleep-disorder">2b Sleep disorder</h3>
+</section>
+<section id="b-sleep-disorder" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="b-sleep-disorder"><span class="header-section-number">1.2.2</span> 2b Sleep disorder</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sleep<span class="sc">$</span>sleep_disorder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(sleep<span class="sc">$</span>sleep_disorder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
    Insomnia        None Sleep Apnea 
          77         219          78 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>gender_w_dis<span class="ot">&lt;-</span><span class="fu">table</span>(sleep<span class="sc">$</span>gender, sleep<span class="sc">$</span>sleep_disorder)</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">mar=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>))</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(gender_w_dis[<span class="st">"Male"</span>, ],<span class="at">main =</span> <span class="st">"Male"</span>)</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(gender_w_dis[<span class="st">"Female"</span>, ],<span class="at">main =</span> <span class="st">"Female"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>gender_w_dis<span class="ot">&lt;-</span><span class="fu">table</span>(sleep<span class="sc">$</span>gender, sleep<span class="sc">$</span>sleep_disorder)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">mar=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>))</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(gender_w_dis[<span class="st">"Male"</span>, ],<span class="at">main =</span> <span class="st">"Male"</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(gender_w_dis[<span class="st">"Female"</span>, ],<span class="at">main =</span> <span class="st">"Female"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Sleepcase_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Sleepcase_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(old)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Sleep Apnea is most common overall (excluding no disorder)</p>
 <p>Most common in Female is Apnea Most common in Male is Insomnia</p>
 </section>
-<section id="c-combination-of-occupation-gender-quality" class="level3">
-<h3 class="anchored" data-anchor-id="c-combination-of-occupation-gender-quality">2c Combination of Occupation gender Quality</h3>
+<section id="c-combination-of-occupation-gender-quality" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="c-combination-of-occupation-gender-quality"><span class="header-section-number">1.2.3</span> 2c Combination of Occupation gender Quality</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>occ_gen_qual <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(sleep_quality <span class="sc">~</span> occupation <span class="sc">+</span> gender, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean)</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(sleep_quality <span class="sc">~</span> occupation <span class="sc">+</span> gender, <span class="at">data =</span> sleep, <span class="at">FUN =</span> length)</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(counts)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"n"</span></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>occ_gen_qual <span class="ot">&lt;-</span> <span class="fu">merge</span>(occ_gen_qual, counts, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"occupation"</span>, <span class="st">"gender"</span>))</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>occ_gen_qual <span class="ot">&lt;-</span> occ_gen_qual[<span class="fu">order</span>(<span class="sc">-</span>occ_gen_qual<span class="sc">$</span>sleep_quality), ]</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>occ_gen_qual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>occ_gen_qual <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(sleep_quality <span class="sc">~</span> occupation <span class="sc">+</span> gender, <span class="at">data =</span> sleep, <span class="at">FUN =</span> mean)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>counts <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(sleep_quality <span class="sc">~</span> occupation <span class="sc">+</span> gender, <span class="at">data =</span> sleep, <span class="at">FUN =</span> length)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(counts)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"n"</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>occ_gen_qual <span class="ot">&lt;-</span> <span class="fu">merge</span>(occ_gen_qual, counts, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"occupation"</span>, <span class="st">"gender"</span>))</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>occ_gen_qual <span class="ot">&lt;-</span> occ_gen_qual[<span class="fu">order</span>(<span class="sc">-</span>occ_gen_qual<span class="sc">$</span>sleep_quality), ]</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>occ_gen_qual</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             occupation gender sleep_quality  n
 3                Doctor Female      9.000000  2
@@ -362,15 +390,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>  sleep_male<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Male"</span>),]</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    sleep_female<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Female"</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>  sleep_male<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Male"</span>),]</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    sleep_female<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>gender <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Female"</span>),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lowsest Male sleep quality is for Sales Representatives</p>
 <p>Lowest Female sleep quality is for Scientist</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>sleepocst_Male<span class="ot">&lt;-</span><span class="fu">aggregate</span>(stress_level <span class="sc">~</span> occupation, <span class="at">data =</span> sleep_male, <span class="at">FUN =</span> mean )</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>sleepocst_Male<span class="ot">&lt;-</span>sleepocst_Male[<span class="fu">order</span>(<span class="sc">-</span>sleepocst_Male<span class="sc">$</span>stress_level),]</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocst_Male)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>sleepocst_Male<span class="ot">&lt;-</span><span class="fu">aggregate</span>(stress_level <span class="sc">~</span> occupation, <span class="at">data =</span> sleep_male, <span class="at">FUN =</span> mean )</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>sleepocst_Male<span class="ot">&lt;-</span>sleepocst_Male[<span class="fu">order</span>(<span class="sc">-</span>sleepocst_Male<span class="sc">$</span>stress_level),]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocst_Male)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>            occupation stress_level
 5 Sales Representative     8.000000
@@ -385,9 +413,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Male Sales Representatives has highest stress</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>sleepocst_Female<span class="ot">&lt;-</span><span class="fu">aggregate</span>(stress_level <span class="sc">~</span> occupation, <span class="at">data =</span> sleep_female, <span class="at">FUN =</span> mean )</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>sleepocst_Female<span class="ot">&lt;-</span>sleepocst_Female[<span class="fu">order</span>(<span class="sc">-</span>sleepocst_Female<span class="sc">$</span>stress_level),]</span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocst_Female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>sleepocst_Female<span class="ot">&lt;-</span><span class="fu">aggregate</span>(stress_level <span class="sc">~</span> occupation, <span class="at">data =</span> sleep_female, <span class="at">FUN =</span> mean )</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>sleepocst_Female<span class="ot">&lt;-</span>sleepocst_Female[<span class="fu">order</span>(<span class="sc">-</span>sleepocst_Female<span class="sc">$</span>stress_level),]</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sleepocst_Female)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  occupation stress_level
 7  Scientist     7.000000
@@ -402,7 +430,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Female Scientist has highest stress</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">cor</span>(sleep<span class="sc">$</span>sleep_quality,sleep<span class="sc">$</span>stress_level))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">cor</span>(sleep<span class="sc">$</span>sleep_quality,sleep<span class="sc">$</span>stress_level))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.898752</code></pre>
 </div>
@@ -410,31 +438,86 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>There is a negative correlation between stress level and sleep quality meaning the more stress a person have the worse is there sleep quality. Also basing that there is a similar correlation in separate female and male group i think that there is enough evidence to say there can be a strong correlation.</p>
 </section>
 </section>
-<section id="part-3" class="level2">
-<h2 class="anchored" data-anchor-id="part-3">Part 3</h2>
+<section id="part-3" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="part-3"><span class="header-section-number">1.3</span> Part 3</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a> sleep_male_insomnia<span class="ot">&lt;-</span>sleep_male[sleep_male<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">length</span>(sleep_male_insomnia<span class="sc">$</span>gender)<span class="sc">/</span><span class="fu">length</span>(sleep_male<span class="sc">$</span>gender)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a> sleep_male_insomnia<span class="ot">&lt;-</span>sleep_male[sleep_male<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">length</span>(sleep_male_insomnia<span class="sc">$</span>gender)<span class="sc">/</span><span class="fu">length</span>(sleep_male<span class="sc">$</span>gender)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21.69312</code></pre>
 </div>
 </div>
 <p>Wrong 21.69 percent of males strugle from Insomnoa</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(sleep_male_insomnia<span class="sc">$</span>daily_steps))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(sleep_male_insomnia<span class="sc">$</span>daily_steps))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5812.195</code></pre>
 </div>
 </div>
 <p>Wring the average daily steps by males with insomnia is 5812</p>
+</section>
+<section id="part-4" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="part-4"><span class="header-section-number">1.4</span> Part 4</h2>
+<section id="a" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="a"><span class="header-section-number">1.4.1</span> a)</h3>
+<section id="section" class="level4" data-number="1.4.1.1">
+<h4 data-number="1.4.1.1" class="anchored" data-anchor-id="section"><span class="header-section-number">1.4.1.1</span> 1.</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>sleep_insomnia<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep_insomnia<span class="sc">$</span>sleep_duration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sleep_insomnia<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep_insomnia<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  28.00   43.00   44.00   43.52   45.00   53.00 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">mar=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>))</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_insomnia<span class="sc">$</span>age, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">"Age of people with Insomnia"</span>, <span class="at">col=</span> <span class="st">"lightblue"</span>)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>sleep_apnea<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sleep Apnea"</span>),]</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(sleep_apnea<span class="sc">$</span>age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  28.00   49.00   50.00   49.71   57.75   59.00 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_apnea<span class="sc">$</span>age, <span class="at">horizontal =</span> <span class="cn">TRUE</span>,<span class="at">main =</span> <span class="st">"Age of people with Sleep Apnea"</span>, <span class="at">col=</span> <span class="st">"lightgreen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Sleepcase_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="a-1" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="a-1"><span class="header-section-number">1.4.2</span> a)</h3>
+<section id="section-1" class="level4" data-number="1.4.2.1">
+<h4 data-number="1.4.2.1" class="anchored" data-anchor-id="section-1"><span class="header-section-number">1.4.2.1</span> 2.</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sleep_insomnia<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep_insomnia<span class="sc">$</span>sleep_duration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
    5.90    6.40    6.50    6.59    6.60    8.30 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_insomnia<span class="sc">$</span>sleep_duration, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">"Duration of sleep with Insomnia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">mar=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>))</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_insomnia<span class="sc">$</span>sleep_duration, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">"Duration of sleep with Insomnia"</span>,<span class="at">col=</span><span class="st">"lightblue"</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>sleep_apnea<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sleep Apnea"</span>),]</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(sleep_apnea<span class="sc">$</span>sleep_duration))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  5.800   6.100   6.800   7.032   8.100   8.200 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_apnea<span class="sc">$</span>sleep_duration, <span class="at">horizontal =</span> <span class="cn">TRUE</span>,<span class="at">main =</span> <span class="st">"Duration of sleep with Sleep Apnea"</span>, <span class="at">col=</span> <span class="st">"lightgreen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -442,21 +525,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>sleep_apnea<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sleep Apnea"</span>),]</span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(sleep_apnea<span class="sc">$</span>sleep_duration))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  5.800   6.100   6.800   7.032   8.100   8.200 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_apnea<span class="sc">$</span>sleep_duration, <span class="at">horizontal =</span> <span class="cn">TRUE</span>,<span class="at">main =</span> <span class="st">"Duration of sleep with Sleep Apnea"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="Sleepcase_files/figure-html/unnamed-chunk-15-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+</section>
+</section>
 </section>
 </section>
 
@@ -866,4 +937,5 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<script src="Sleepcase_files/libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
