@@ -162,4 +162,81 @@ text(
   ```
   
 
-
+  sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
+  sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
+  sleep_healthy<-sleep[sleep$sleep_disorder %in% c("None"),]
+  
+  
+  
+  
+  
+  sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
+  summary(sleep_insomnia$age)
+  par(mfrow=c(1,2),mar= c(5,1,5,1))
+  
+  boxplot(sleep_insomnia$age, horizontal = TRUE, main = "Age of people with Insomnia", col= "lightblue")
+  
+  
+  
+  
+  sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
+  print(summary(sleep_apnea$age))
+  
+  boxplot(sleep_apnea$age, horizontal = TRUE,main = "Age of people with Sleep Apnea", col= "lightgreen")
+  
+  
+  
+  
+  
+  ```{r}
+  sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
+  summary(sleep_insomnia$sleep_duration)
+  par(mfrow=c(1,2),mar= c(5,1,5,1))
+  
+  boxplot(sleep_insomnia$sleep_duration, horizontal = TRUE, main = "Duration of sleep with Insomnia",col="lightblue")
+  
+  
+  
+  
+  sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
+  print(summary(sleep_apnea$sleep_duration))
+  
+  boxplot(sleep_apnea$sleep_duration, horizontal = TRUE,main = "Duration of sleep with Sleep Apnea", col= "lightgreen")
+  
+  
+  
+  ```
+  
+  
+  
+  ```{r}
+  
+  ci<-function(vec,alpha){
+    n<-length(vec)
+    sigma<-sd(vec)
+    z<-abs(qnorm((1-alpha/2),0,1))
+    xlow<-mean(vec)-z*(sigma/sqrt(n))
+    xhigh<-mean(vec)+z*(sigma/sqrt(n))
+    print(n)
+    print(sigma)
+    print(z)
+    return(c(xlow,xhigh))
+  }
+  
+  ```
+  
+  
+  
+  
+  
+  
+  <style>
+    hr {
+      border: none;
+      height: 2px;
+      background-color: #000;
+        opacity: 1;
+    }
+  </style>
+    
+  

@@ -92,11 +92,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#b-sleep-disorder" id="toc-b-sleep-disorder" class="nav-link" data-scroll-target="#b-sleep-disorder"><span class="header-section-number">1.2.2</span> 2b Sleep disorder</a></li>
   <li><a href="#c-combination-of-occupation-gender-quality" id="toc-c-combination-of-occupation-gender-quality" class="nav-link" data-scroll-target="#c-combination-of-occupation-gender-quality"><span class="header-section-number">1.2.3</span> 2c Combination of Occupation gender Quality</a></li>
   </ul></li>
-  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3"><span class="header-section-number">1.3</span> Part 3</a></li>
-  <li><a href="#part-4" id="toc-part-4" class="nav-link" data-scroll-target="#part-4"><span class="header-section-number">1.4</span> Part 4</a>
+  <li><a href="#part-3" id="toc-part-3" class="nav-link" data-scroll-target="#part-3"><span class="header-section-number">1.3</span> Part 3</a>
   <ul class="collapse">
-  <li><a href="#a" id="toc-a" class="nav-link" data-scroll-target="#a"><span class="header-section-number">1.4.1</span> a)</a></li>
-  <li><a href="#a-1" id="toc-a-1" class="nav-link" data-scroll-target="#a-1"><span class="header-section-number">1.4.2</span> a)</a></li>
+  <li><a href="#a-statment-41-of-males-suffer-from-insomnia." id="toc-a-statment-41-of-males-suffer-from-insomnia." class="nav-link" data-scroll-target="#a-statment-41-of-males-suffer-from-insomnia."><span class="header-section-number">1.3.1</span> a) Statment: 41% of males suffer from insomnia.</a></li>
+  <li><a href="#b-statment-the-average-daily-steps-of-men-who-suffer-from-insomnia-is-7065." id="toc-b-statment-the-average-daily-steps-of-men-who-suffer-from-insomnia-is-7065." class="nav-link" data-scroll-target="#b-statment-the-average-daily-steps-of-men-who-suffer-from-insomnia-is-7065."><span class="header-section-number">1.3.2</span> b) Statment: The average daily steps of men who suffer from insomnia is 7065.</a></li>
+  </ul></li>
+  <li><a href="#part-4-box-plots" id="toc-part-4-box-plots" class="nav-link" data-scroll-target="#part-4-box-plots"><span class="header-section-number">1.4</span> Part 4 (Box plots)</a>
+  <ul class="collapse">
+  <li><a href="#a-sleep-duration-and-sleepduration" id="toc-a-sleep-duration-and-sleepduration" class="nav-link" data-scroll-target="#a-sleep-duration-and-sleepduration"><span class="header-section-number">1.4.1</span> a) sleep duration and sleepduration</a></li>
+  <li><a href="#a-sleep-disorders-and-age" id="toc-a-sleep-disorders-and-age" class="nav-link" data-scroll-target="#a-sleep-disorders-and-age"><span class="header-section-number">1.4.2</span> a) Sleep disorders and Age</a></li>
+  <li><a href="#b-computing-overlap-of-confidence-intervals" id="toc-b-computing-overlap-of-confidence-intervals" class="nav-link" data-scroll-target="#b-computing-overlap-of-confidence-intervals"><span class="header-section-number">1.4.3</span> b) Computing overlap of confidence intervals</a></li>
+  <li><a href="#c-doing-part-b-for-age" id="toc-c-doing-part-b-for-age" class="nav-link" data-scroll-target="#c-doing-part-b-for-age"><span class="header-section-number">1.4.4</span> c) doing part b for age</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -138,8 +144,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>old<span class="ot">&lt;-</span><span class="fu">par</span>(<span class="at">no.readonly =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>coljack<span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">"#33ccff"</span>,<span class="st">"#33ffbb"</span>,<span class="st">"#33ff33"</span>,<span class="st">"#99ff33"</span>,<span class="st">"#ff9933"</span>,<span class="st">"#ff3333"</span>,<span class="st">"#ff3399"</span>,<span class="st">"#ff33ff"</span>,<span class="st">"#7733ff"</span>,<span class="st">"#3333ff"</span>,<span class="st">"#ffff1a"</span>), <span class="at">nrow=</span><span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>coljack<span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="st">"#33ccff"</span>,<span class="st">"#33ffbb"</span>,<span class="st">"#33ff33"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"#99ff33"</span>,<span class="st">"#ff9933"</span>,<span class="st">"#ff3333"</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"#ff3399"</span>,<span class="st">"#ff33ff"</span>,<span class="st">"#7733ff"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"#3333ff"</span>,<span class="st">"#ffff1a"</span>), <span class="at">nrow=</span><span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<hr>
+<p>First 6 row of the data</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Reading the file </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>sleep<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">"sleep.csv"</span>)</span>
@@ -161,6 +172,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 6        3000       Insomnia</code></pre>
 </div>
 </div>
+<hr>
+<p>Describing the main data set</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#types of data and sample size </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(sleep)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -251,11 +264,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<hr>
+<p><br> <br> <br> <br> <br> <br></p>
+<p><br> <br></p>
+<hr>
 </section>
 <section id="part-2" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="part-2"><span class="header-section-number">1.2</span> Part 2</h2>
+<p><br> <br></p>
 <section id="a-relation-between-occupation-and-stress-level-sleep-quality" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="a-relation-between-occupation-and-stress-level-sleep-quality"><span class="header-section-number">1.2.1</span> 2a Relation between Occupation and Stress level, Sleep quality</h3>
+<hr>
 <section id="sleep-quality-and-occupation" class="level4" data-number="1.2.1.1">
 <h4 data-number="1.2.1.1" class="anchored" data-anchor-id="sleep-quality-and-occupation"><span class="header-section-number">1.2.1.1</span> Sleep Quality and Occupation</h4>
 <div class="cell">
@@ -436,10 +455,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>There is a negative correlation between stress level and sleep quality meaning the more stress a person have the worse is there sleep quality. Also basing that there is a similar correlation in separate female and male group i think that there is enough evidence to say there can be a strong correlation.</p>
+<hr>
+<p><br> <br> <br> <br> <br> <br></p>
+<p><br> <br></p>
+<hr>
 </section>
 </section>
 <section id="part-3" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="part-3"><span class="header-section-number">1.3</span> Part 3</h2>
+<p><br> <br></p>
+<section id="a-statment-41-of-males-suffer-from-insomnia." class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="a-statment-41-of-males-suffer-from-insomnia."><span class="header-section-number">1.3.1</span> a) Statment: 41% of males suffer from insomnia.</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a> sleep_male_insomnia<span class="ot">&lt;-</span>sleep_male[sleep_male<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">length</span>(sleep_male_insomnia<span class="sc">$</span>gender)<span class="sc">/</span><span class="fu">length</span>(sleep_male<span class="sc">$</span>gender)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -447,42 +473,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 21.69312</code></pre>
 </div>
 </div>
-<p>Wrong 21.69 percent of males strugle from Insomnoa</p>
+<p>Wrong 21.69 percent of males struggle from Insomnia</p>
+</section>
+<section id="b-statment-the-average-daily-steps-of-men-who-suffer-from-insomnia-is-7065." class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="b-statment-the-average-daily-steps-of-men-who-suffer-from-insomnia-is-7065."><span class="header-section-number">1.3.2</span> b) Statment: The average daily steps of men who suffer from insomnia is 7065.</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">mean</span>(sleep_male_insomnia<span class="sc">$</span>daily_steps))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5812.195</code></pre>
 </div>
 </div>
-<p>Wring the average daily steps by males with insomnia is 5812</p>
+<p>Wrong the average daily steps by males with insomnia is 5812</p>
+<hr>
+<p><br> <br> <br> <br> <br> <br></p>
+<p><br> <br></p>
+<hr>
 </section>
-<section id="part-4" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="part-4"><span class="header-section-number">1.4</span> Part 4</h2>
-<section id="a" class="level3" data-number="1.4.1">
-<h3 data-number="1.4.1" class="anchored" data-anchor-id="a"><span class="header-section-number">1.4.1</span> a)</h3>
+</section>
+<section id="part-4-box-plots" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="part-4-box-plots"><span class="header-section-number">1.4</span> Part 4 (Box plots)</h2>
+<p><br> <br></p>
+<section id="a-sleep-duration-and-sleepduration" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="a-sleep-duration-and-sleepduration"><span class="header-section-number">1.4.1</span> a) sleep duration and sleepduration</h3>
 <section id="section" class="level4" data-number="1.4.1.1">
 <h4 data-number="1.4.1.1" class="anchored" data-anchor-id="section"><span class="header-section-number">1.4.1.1</span> 1.</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>sleep_insomnia<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep_insomnia<span class="sc">$</span>age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  28.00   43.00   44.00   43.52   45.00   53.00 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">mar=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>))</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_insomnia<span class="sc">$</span>age, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">"Age of people with Insomnia"</span>, <span class="at">col=</span> <span class="st">"lightblue"</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>sleep_apnea<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sleep Apnea"</span>),]</span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(sleep_apnea<span class="sc">$</span>age))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  28.00   49.00   50.00   49.71   57.75   59.00 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_apnea<span class="sc">$</span>age, <span class="at">horizontal =</span> <span class="cn">TRUE</span>,<span class="at">main =</span> <span class="st">"Age of people with Sleep Apnea"</span>, <span class="at">col=</span> <span class="st">"lightgreen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_duration <span class="sc">~</span> sleep_disorder, <span class="at">data =</span>sleep,</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"Lightblue"</span>, </span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span> <span class="st">"SLeep duration based on sleep disorders"</span>, </span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab=</span> <span class="st">"Sleep disorder"</span>, <span class="at">xlab=</span> <span class="st">"Sleep duration (hours)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -493,31 +512,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="a-1" class="level3" data-number="1.4.2">
-<h3 data-number="1.4.2" class="anchored" data-anchor-id="a-1"><span class="header-section-number">1.4.2</span> a)</h3>
+<section id="a-sleep-disorders-and-age" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="a-sleep-disorders-and-age"><span class="header-section-number">1.4.2</span> a) Sleep disorders and Age</h3>
 <section id="section-1" class="level4" data-number="1.4.2.1">
 <h4 data-number="1.4.2.1" class="anchored" data-anchor-id="section-1"><span class="header-section-number">1.4.2.1</span> 2.</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>sleep_insomnia<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(sleep_insomnia<span class="sc">$</span>sleep_duration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-   5.90    6.40    6.50    6.59    6.60    8.30 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">mar=</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">1</span>))</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_insomnia<span class="sc">$</span>sleep_duration, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">main =</span> <span class="st">"Duration of sleep with Insomnia"</span>,<span class="at">col=</span><span class="st">"lightblue"</span>)</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>sleep_apnea<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sleep Apnea"</span>),]</span>
-<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(sleep_apnea<span class="sc">$</span>sleep_duration))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  5.800   6.100   6.800   7.032   8.100   8.200 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(sleep_apnea<span class="sc">$</span>sleep_duration, <span class="at">horizontal =</span> <span class="cn">TRUE</span>,<span class="at">main =</span> <span class="st">"Duration of sleep with Sleep Apnea"</span>, <span class="at">col=</span> <span class="st">"lightgreen"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(age <span class="sc">~</span> sleep_disorder, <span class="at">data =</span>sleep,</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">col =</span> <span class="st">"Lightgreen"</span>, </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span> <span class="st">"Sleep disorders based on Age"</span>, </span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab=</span> <span class="st">"Sleep disorder"</span>, <span class="at">xlab=</span> <span class="st">"Age (years)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -527,6 +530,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
+</section>
+<section id="b-computing-overlap-of-confidence-intervals" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="b-computing-overlap-of-confidence-intervals"><span class="header-section-number">1.4.3</span> b) Computing overlap of confidence intervals</h3>
+<p>Looking for intercept at alpha set at 5</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a> sleep_insomnia<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Insomnia"</span>),]</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  sleep_apnea<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Sleep Apnea"</span>),]</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  sleep_healthy<span class="ot">&lt;-</span>sleep[sleep<span class="sc">$</span>sleep_disorder <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"None"</span>),]</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="co">#sleep intervals for insomnia </span></span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a> <span class="fu">t.test</span>( sleep_insomnia<span class="sc">$</span>sleep_duration,<span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.501737 6.677484
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#sleep intervals for apnea </span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">t.test</span>(sleep_apnea<span class="sc">$</span>sleep_duration,<span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.812265 7.251837
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#sleep intervals for healthy</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">t.test</span>( sleep_healthy<span class="sc">$</span>sleep_duration,<span class="at">conf.level =</span> <span class="fl">0.95</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.260916 7.455979
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+</div>
+<p>As it can be seen there is no intercept at alpha = 5 that the result aren’t random and have a correlation.</p>
+<p>Now we can try for alpha = 1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sleep intervals for insomnia </span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">t.test</span>( sleep_insomnia<span class="sc">$</span>sleep_duration,<span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.473040 6.706181
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#sleep intervals for apnea </span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">t.test</span>(sleep_apnea<span class="sc">$</span>sleep_duration,<span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6.740527 7.323575
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a> <span class="co">#sleep intervals for healthy</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">t.test</span>( sleep_healthy<span class="sc">$</span>sleep_duration,<span class="at">conf.level =</span> <span class="fl">0.99</span>)<span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7.229856 7.487039
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+</div>
+<p>there is a slight intercept between apnea and healthy boundries howeevr only by 0.02 which isnt very significant</p>
+</section>
+<section id="c-doing-part-b-for-age" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="c-doing-part-b-for-age"><span class="header-section-number">1.4.4</span> c) doing part b for age</h3>
+<p>Now we repeat but for age</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For healthy </span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( sleep_healthy<span class="sc">$</span>age,<span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 37.99402 40.07904
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For Insomnia </span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( sleep_insomnia<span class="sc">$</span>age,<span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42.42809 44.61087
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For Apnea </span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(sleep_apnea<span class="sc">$</span>age,<span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 47.67802 51.73223
+attr(,"conf.level")
+[1] 0.95</code></pre>
+</div>
+</div>
+<p>As it can be seen there is no intercept at alpha = 5 that the result aren’t random and have a correlation.</p>
+<p>Now we try for alpha = 1</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For healthy </span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( sleep_healthy<span class="sc">$</span>age,<span class="at">conf.level =</span> <span class="fl">0.99</span>) <span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 37.66201 40.41105
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For Insomnia </span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>( sleep_insomnia<span class="sc">$</span>age,<span class="at">conf.level =</span> <span class="fl">0.99</span>) <span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42.07169 44.96727
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co">#For Apnea </span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(sleep_apnea<span class="sc">$</span>age,<span class="at">conf.level =</span> <span class="fl">0.99</span>) <span class="sc">$</span>conf.int</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 47.01638 52.39388
+attr(,"conf.level")
+[1] 0.99</code></pre>
+</div>
+</div>
+<p>Even at alpha 1 there is no overlap</p>
+<p>This means that, people with no sleep disorder are the youngest on average, people with insomnia are older, and people with sleep apnea are the oldest on average.</p>
+<p>Because the confidence intervals do not overlap, this suggests that the age differences between the groups are unlikely to be random.</p>
 </section>
 </section>
 </section>

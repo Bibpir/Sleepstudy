@@ -3,7 +3,7 @@ title: "Case-II: Lifestyle and Sleeping Quality"
 format:
   html:
     toc: true
-    toc-location: left   # or right
+    toc-location: left  
     toc-depth: 3
     number-sections: true
     smooth-scroll: true
@@ -11,18 +11,29 @@ author: Egor Barsegov,
 
 ---
 
+
+
+
 # Case study sleep (task 2)
 
-
 ## Part 1
+
+
 
 ```{r}
 old<-par(no.readonly = TRUE)
 
-coljack<- matrix(c("#33ccff","#33ffbb","#33ff33","#99ff33","#ff9933","#ff3333","#ff3399","#ff33ff","#7733ff","#3333ff","#ffff1a"), nrow=11)
+coljack<- matrix(c("#33ccff","#33ffbb","#33ff33",
+                   "#99ff33","#ff9933","#ff3333",
+                   "#ff3399","#ff33ff","#7733ff",
+                   "#3333ff","#ffff1a"), nrow=11)
 
 ```
 
+
+---
+
+First 6 row of the data 
 
 
 ```{r}
@@ -31,7 +42,9 @@ sleep<-read.csv("sleep.csv")
 head(sleep)
 ```
 
+---
 
+ Describing the main data set
 
 ```{r}
 #types of data and sample size 
@@ -82,12 +95,47 @@ length(unique(sleep$occupation))
 
 
 
+
+
+
+
+
+
+
+
+---
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+---
+
 ## Part 2
+
+
+
+<br>
+<br>
+
+
+
+ 
+
 
 
 ### 2a Relation between Occupation and Stress level, Sleep quality
 
+---
+
 #### Sleep Quality and Occupation
+
 
 ```{r, fig.height=8, fig.width=10}
 
@@ -110,7 +158,9 @@ barplot(sleepocqw$sleep_quality,
 
 
 ```
+
 #### Stress Level and Occupation
+
 ```{r, fig.height=8, fig.width=10}
 sleepocst<-aggregate(stress_level ~ occupation, data = sleep, FUN = mean )
 sleepocst<-cbind(sleepocst,coljack)
@@ -140,6 +190,7 @@ pie(gender_w_dis["Female", ],main = "Female")
 
 par(old)
 ``` 
+
 
 Sleep Apnea is most common overall (excluding no disorder)
 
@@ -203,11 +254,32 @@ print(cor(sleep$sleep_quality,sleep$stress_level))
 There is a negative correlation between stress level and sleep quality meaning the more stress a person have the worse is there sleep quality. Also basing that there is a similar correlation in separate female and male group i think that there is enough evidence to say there can be a strong correlation. 
 
 
+---
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+<br>
+<br>
 
+---
 
 ## Part 3
+
+
+<br>
+<br>
+
+
+
+
+
+
+### a) Statment: 41% of males suffer from insomnia.
 
 ```{r}
 
@@ -216,56 +288,147 @@ print(length(sleep_male_insomnia$gender)/length(sleep_male$gender)*100)
 
 ```
 
-Wrong 21.69 percent of males strugle from Insomnoa 
+Wrong 21.69 percent of males struggle from Insomnia 
+
+### b) Statment: The average daily steps of men who suffer from insomnia is 7065.
 
 
 ```{r}
 print(mean(sleep_male_insomnia$daily_steps))
 ```
 
-Wring the average daily steps by males with insomnia is 5812
+Wrong the average daily steps by males with insomnia is 5812
 
-## Part 4
+---
 
-### a) 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+---
+
+## Part 4 (Box plots)
+
+
+
+<br>
+<br>
+
+
+
+### a) sleep duration and sleepduration 
 
 #### 1.
 
 ```{r}
-sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
-summary(sleep_insomnia$age)
-par(mfrow=c(1,2),mar= c(5,1,5,1))
-
-boxplot(sleep_insomnia$age, horizontal = TRUE, main = "Age of people with Insomnia", col= "lightblue")
-
-
-
-
-sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
-print(summary(sleep_apnea$age))
-
-boxplot(sleep_apnea$age, horizontal = TRUE,main = "Age of people with Sleep Apnea", col= "lightgreen")
-
+boxplot(sleep_duration ~ sleep_disorder, data =sleep,
+        horizontal = TRUE, col = "Lightblue", 
+        main= "SLeep duration based on sleep disorders", 
+        ylab= "Sleep disorder", xlab= "Sleep duration (hours)")
 ```
 
-### a) 
+### a) Sleep disorders and Age
 
 #### 2.
 
+```{r}
+
+boxplot(age ~ sleep_disorder, data =sleep,
+        horizontal = TRUE, col = "Lightgreen", 
+        main= "Sleep disorders based on Age", 
+        ylab= "Sleep disorder", xlab= "Age (years)")
+```
+
+### b) Computing overlap of confidence intervals 
+
+
+
+Looking for intercept at alpha set at 5
 
 ```{r}
-sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
-summary(sleep_insomnia$sleep_duration)
-par(mfrow=c(1,2),mar= c(5,1,5,1))
-
-boxplot(sleep_insomnia$sleep_duration, horizontal = TRUE, main = "Duration of sleep with Insomnia",col="lightblue")
-
-
-
-
-sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
-print(summary(sleep_apnea$sleep_duration))
-
-boxplot(sleep_apnea$sleep_duration, horizontal = TRUE,main = "Duration of sleep with Sleep Apnea", col= "lightgreen")
+ sleep_insomnia<-sleep[sleep$sleep_disorder %in% c("Insomnia"),]
+  sleep_apnea<-sleep[sleep$sleep_disorder %in% c("Sleep Apnea"),]
+  sleep_healthy<-sleep[sleep$sleep_disorder %in% c("None"),]
+#sleep intervals for insomnia 
+ t.test( sleep_insomnia$sleep_duration,conf.level = 0.95)$conf.int
+ 
+ #sleep intervals for apnea 
+ t.test(sleep_apnea$sleep_duration,conf.level = 0.95)$conf.int
+ 
+ #sleep intervals for healthy
+ t.test( sleep_healthy$sleep_duration,conf.level = 0.95)$conf.int
 
 ```
+
+
+
+
+
+
+As it can be seen there is no intercept at alpha = 5 that the result aren't random and have a correlation. 
+
+
+
+Now we can try for alpha = 1 
+
+```{r}
+#sleep intervals for insomnia 
+ t.test( sleep_insomnia$sleep_duration,conf.level = 0.99)$conf.int
+ 
+ #sleep intervals for apnea 
+ t.test(sleep_apnea$sleep_duration,conf.level = 0.99)$conf.int
+
+ #sleep intervals for healthy
+ t.test( sleep_healthy$sleep_duration,conf.level = 0.99)$conf.int
+
+```
+there is a slight intercept between apnea and healthy boundries howeevr only by 0.02 which isnt very significant 
+
+### c) doing part b for age 
+
+Now we repeat but for age 
+```{r}
+#For healthy 
+t.test( sleep_healthy$age,conf.level = 0.95) $conf.int
+#For Insomnia 
+t.test( sleep_insomnia$age,conf.level = 0.95) $conf.int
+#For Apnea 
+t.test(sleep_apnea$age,conf.level = 0.95) $conf.int
+  
+   
+
+```
+As it can be seen there is no intercept at alpha = 5 that the result aren't random and have a correlation. 
+
+Now we try for alpha = 1
+
+```{r}
+#For healthy 
+t.test( sleep_healthy$age,conf.level = 0.99) $conf.int
+#For Insomnia 
+t.test( sleep_insomnia$age,conf.level = 0.99) $conf.int
+#For Apnea 
+t.test(sleep_apnea$age,conf.level = 0.99) $conf.int
+  
+   
+
+```
+
+Even at alpha 1 there is no overlap
+
+This means that, people with no sleep disorder are the youngest on average, people with insomnia are older, and people with sleep apnea are the oldest on average.
+
+Because the confidence intervals do not overlap, this suggests that the age differences between the groups are unlikely to be random.
+
+
+
+
+
+
+
